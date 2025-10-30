@@ -31,7 +31,7 @@ if (fileContent.length !== 0) {
         console.log("RIGHT_PAREN ) null");
       }
    }
-   
+   console.log("EOF  null");
  } else {
    console.log("EOF  null");
  }
