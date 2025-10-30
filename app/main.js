@@ -23,7 +23,13 @@ const filename = args[1];
 const fileContent = fs.readFileSync(filename, "utf8");
 
 if (fileContent.length !== 0) {
-   throw new Error("Scanner not implemented");
+   for(let i = 0; i < fileContent.length; i++) {
+      if (fileContent[i] === '(') {
+        console.log("LEFT_PAREN");
+        elif (fileContent[i] === ')') {
+        console.log("RIGHT_PAREN");
+      }
+   }
  } else {
    console.log("EOF  null");
  }
