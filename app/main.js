@@ -26,10 +26,12 @@ if (fileContent.length !== 0) {
    for(let i = 0; i < fileContent.length; i++) {
       if (fileContent[i] === '(') {
         console.log("LEFT_PAREN");
-        elif (fileContent[i] === ')') {
+      }
+        else if (fileContent[i] === ')') {
         console.log("RIGHT_PAREN");
       }
    }
+   console.log("EOF null");
  } else {
    console.log("EOF  null");
  }
