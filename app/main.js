@@ -36,6 +36,25 @@ if (fileContent.length !== 0) {
     else if (fileContent[i] === '}') {
       console.log("RIGHT_BRACE } null");
     }
+    else if (fileContent[i] === ',') {
+      console.log("COMMA , null");
+    }
+    else if (fileContent[i] === '.') {
+      console.log("DOT . null");
+    }
+    else if (fileContent[i] === '-') {
+      console.log("MINUS - null")
+    }
+    else if (fileContent[i] === '+') {
+      console.log("PLUS + null")
+    }
+    else if (fileContent[i] === '*') {
+      console.log("STAR * null")
+    }
+    else if (fileContent[i] === '/') {
+      console.log("SLASH / null")
+    }
+
   }
   console.log("EOF  null");
 } else {
