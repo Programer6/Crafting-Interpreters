@@ -25,56 +25,32 @@ const fileContent = fs.readFileSync(filename, "utf8");
 
 if (fileContent.length !== 0) {
   for(let i = 0; i < fileContent.length; i++) {
-    if (fileContent[i] === '(') {
+    const ch = fileContent[i];
+    if (ch === '(') {
       console.log("LEFT_PAREN ( null");
-    }
-    else if (fileContent[i] === ')') {
+    } else if (ch === ')') {
       console.log("RIGHT_PAREN ) null");
-    }
-    else if (fileContent[i] === '{') {
+    } else if (ch === '{') {
       console.log("LEFT_BRACE { null");
-    }
-    else if (fileContent[i] === '}') {
+    } else if (ch === '}') {
       console.log("RIGHT_BRACE } null");
-    }
-    else if (fileContent[i] === ',') {
+    } else if (ch === ',') {
       console.log("COMMA , null");
-    }
-    else if (fileContent[i] === '.') {
+    } else if (ch === '.') {
       console.log("DOT . null");
-    }
-    else if (fileContent[i] === '-') {
-      console.log("MINUS - null")
-    }
-    else if (fileContent[i] === '+') {
-      console.log("PLUS + null")
-    }
-    else if (fileContent[i] === '*') {
-      console.log("STAR * null")
-    }
-    else if (fileContent[i] === '/') {
-      console.log("SLASH / null")
-    }
-    else if (fileContent[i] === ';') {
-      console.log("SEMICOLON ; null")
-    }
-    else if (fileContent[i] === ',') {
-      console.log("Error: Unexpected character: ,")
-    }
-    else if (fileContent[i] === '.') {
-      console.log("Error: Unexpected character: .")
-    }
-    else if (fileContent[i] === '$') {
-      console.log("Error: Unexpected character: $")
-    }
-    else if (fileContent[i] === '(') {
-      console.log("Error: Unexpected character: (")
-    }
-    else if (fileContent[i] === '(') {
-      console.log("Error: Unexpected character: #")
+    } else if (ch === '-') {
+      console.log("MINUS - null");
+    } else if (ch === '+') {
+      console.log("PLUS + null");
+    } else if (ch === '*') {
+      console.log("STAR * null");
+    } else if (ch === '/') {
+      console.log("SLASH / null");
+    } else if (ch === ';') {
+      console.log("SEMICOLON ; null");
+    } else {
+      console.error(`Error: Unexpected character: ${ch}`);
+      process.exit(65);
     }
   }
-  console.log("EOF  null");
-} else {
-  console.log("EOF  null");
 }
