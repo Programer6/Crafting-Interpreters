@@ -30,8 +30,13 @@ if (fileContent.length !== 0) {
         else if (fileContent[i] === ')') {
         console.log("RIGHT_PAREN ) null");
       }
+      else if (fileContent[i] === '{') {
+        console.log("LEFT_BRACE { null");
+      }
+      else if (fileContent[i] === '}') {
+        console.log("RIGHT_BRACE } null");
+      }
    }
-   console.log("EOF  null");
  } else {
    console.log("EOF  null");
  }
