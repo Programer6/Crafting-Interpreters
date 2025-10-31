@@ -35,8 +35,11 @@ if (fileContent.length !== 0) {
       }
       else if (fileContent[i] === '}') {
         console.log("RIGHT_BRACE } null");
+        break
       }
    }
  } else {
    console.log("EOF  null");
  }
+
+ console.log("EOF  null");
