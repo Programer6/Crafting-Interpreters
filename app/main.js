@@ -22,6 +22,7 @@ const filename = args[1];
 
 const fileContent = fs.readFileSync(filename, "utf8");
 
+
 if (fileContent.length !== 0) {
   for(let i = 0; i < fileContent.length; i++) {
     if (fileContent[i] === '(') {
@@ -57,7 +58,21 @@ if (fileContent.length !== 0) {
     else if (fileContent[i] === ';') {
       console.log("SEMICOLON ; null")
     }
-
+    else if (fileContent[i] === ',') {
+      console.log("Error: Unexpected character: ,")
+    }
+    else if (fileContent[i] === '.') {
+      console.log("Error: Unexpected character: .")
+    }
+    else if (fileContent[i] === '$') {
+      console.log("Error: Unexpected character: $")
+    }
+    else if (fileContent[i] === '(') {
+      console.log("Error: Unexpected character: (")
+    }
+    else if (fileContent[i] === '(') {
+      console.log("Error: Unexpected character: #")
+    }
   }
   console.log("EOF  null");
 } else {
