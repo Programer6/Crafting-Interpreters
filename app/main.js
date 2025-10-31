@@ -54,6 +54,9 @@ if (fileContent.length !== 0) {
     else if (fileContent[i] === '/') {
       console.log("SLASH / null")
     }
+    else if (fileContent[i] === ';') {
+      console.log("SEMICOLON ; null")
+    }
 
   }
   console.log("EOF  null");
