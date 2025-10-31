@@ -23,23 +23,21 @@ const filename = args[1];
 const fileContent = fs.readFileSync(filename, "utf8");
 
 if (fileContent.length !== 0) {
-   for(let i = 0; i < fileContent.length; i++) {
-      if (fileContent[i] === '(') {
-        console.log("LEFT_PAREN ( null");
-      }
-        else if (fileContent[i] === ')') {
-        console.log("RIGHT_PAREN ) null");
-      }
-      else if (fileContent[i] === '{') {
-        console.log("LEFT_BRACE { null");
-      }
-      else if (fileContent[i] === '}') {
-        console.log("RIGHT_BRACE } null");
-        break
-      }
-   }
- } else {
-   console.log("EOF  null");
- }
-
- console.log("EOF  null");
+  for(let i = 0; i < fileContent.length; i++) {
+    if (fileContent[i] === '(') {
+      console.log("LEFT_PAREN ( null");
+    }
+    else if (fileContent[i] === ')') {
+      console.log("RIGHT_PAREN ) null");
+    }
+    else if (fileContent[i] === '{') {
+      console.log("LEFT_BRACE { null");
+    }
+    else if (fileContent[i] === '}') {
+      console.log("RIGHT_BRACE } null");
+    }
+  }
+  console.log("EOF  null");
+} else {
+  console.log("EOF  null");
+}
