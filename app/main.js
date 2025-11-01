@@ -52,6 +52,16 @@ if (fileContent.length !== 0) {
         i++; 
       }
     }
+    else if (ch === "=") {
+      if (fileContent[i+1] === "="){ // need to remember to use fileContent 
+      console.log("EQUAL_EQUAL == null");
+      i++;
+      }
+    
+      else {
+         console.log("EQUAL = null")
+      }
+    }
     else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
         hasError = true
