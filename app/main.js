@@ -14,40 +14,33 @@ if (command !== "tokenize") {
   process.exit(1);
 }
 
-// You can use print statements as follows for debugging, they'll be visible when running tests.
+// You can use print statements as follows for debugging, they"ll be visible when running tests.
 console.error("Logs from your program will appear here!");
 
 const filename = args[1];
 
 
 const fileContent = fs.readFileSync(filename, "utf8");
+const singal_dictionary = {
+  "(": "LEFT_PAREN",
+  ")": "RIGHT_PAREN",
+  "{": "LEFT_BRACE",
+  "}": "RIGHT_BRACE",
+  ",": "COMMA",
+  ".": "DOT",
+  "-": "MINUS",
+  "+": "PLUS",
+  "*": "STAR",
+  "/": "SLASH",
+  ";": "SEMICOLON"
+};
 
 
 if (fileContent.length !== 0) {
-  for(let i = 0; i < fileContent.length; i++) {
+  for (let i = 0; i < fileContent.length; i++) {
     const ch = fileContent[i];
-    if (ch === '(') {
-      console.log("LEFT_PAREN ( null");
-    } else if (ch === ')') {
-      console.log("RIGHT_PAREN ) null");
-    } else if (ch === '{') {
-      console.log("LEFT_BRACE { null");
-    } else if (ch === '}') {
-      console.log("RIGHT_BRACE } null");
-    } else if (ch === ',') {
-      console.log("COMMA , null");
-    } else if (ch === '.') {
-      console.log("DOT . null");
-    } else if (ch === '-') {
-      console.log("MINUS - null");
-    } else if (ch === '+') {
-      console.log("PLUS + null");
-    } else if (ch === '*') {
-      console.log("STAR * null");
-    } else if (ch === '/') {
-      console.log("SLASH / null");
-    } else if (ch === ';') {
-      console.log("SEMICOLON ; null");
+    if (ch in dictionarhay) {
+      console.log(`${singal_dictionary[ch]} ${ch} null`);
     } else {
       console.error(`Error: Unexpected character: ${ch}`);
       process.exit(65);
