@@ -87,7 +87,7 @@ if (fileContent.length !== 0) {
     else if (ch === " " || ch === "\t") {
     }
     else if (ch === '"'){
-      stringContents = "";
+      let stringContents = "";
       while (i < fileContent.length && fileContent[i] !== '"'){
         stringContents += fileContent[i]
         i++;
