@@ -63,7 +63,7 @@ if (fileContent.length !== 0) {
       }
     }
     else if (ch === "!") {
-      if(fileContent[i+1] === "!" ) {
+      if(fileContent[i+1] === "=" ) {
         i++;
         console.log("BANG_EQUAL != null")
       }
