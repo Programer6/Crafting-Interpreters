@@ -41,17 +41,15 @@ let line = 1
 let hasError = false;
 
 
-
 function TwoCharOperator(i, ch, nextChar, doubleToken, doubleOp, singleToken, singleOp) {
   if (fileContent[i + 1] === nextChar) {
     console.log(`${doubleToken} ${doubleOp} null`);
-    return 1; // Return 1 to increment i by 1 (skip next char)
+    return 1;
   } else {
     console.log(`${singleToken} ${singleOp} null`);
-    return 0; // Return 0 to not skip
+    return 0;
   }
 }
-
 
 if (fileContent.length !== 0) {
   for (let i = 0; i < fileContent.length; i++) {
@@ -59,38 +57,40 @@ if (fileContent.length !== 0) {
     if (ch in singal_dictionary) {
       console.log(`${singal_dictionary[ch]} ${ch} null`);
     } 
-    else if  (newLine.includes(ch)) {
-      line++ 
+    else if (newLine.includes(ch)) {
+      line++;
       if (ch === '\r' && fileContent[i + 1] === '\n') {
-        i++; 
+        i++;
       }
     }
     else if (ch === "=") {
-      i += TwoCharOperator(i, ch, "=", "EQUAL_EQUAL", "==", "EQUAL", "=")
+      i += TwoCharOperator(i, ch, "=", "EQUAL_EQUAL", "==", "EQUAL", "=");
     }    
     else if (ch === "<") {
-        i += TwoCharOperator(i, ch, "=", "LESS_EQUAL", "!=", "BANG", "!")
+      i += TwoCharOperator(i, ch, "=", "LESS_EQUAL", "<=", "LESS", "<");
     }
     else if (ch === ">") {
-      i += checkTwoCharOperator(i, ch, "=", "GREATER_EQUAL", ">=", "GREATER", ">");
+      i += TwoCharOperator(i, ch, "=", "GREATER_EQUAL", ">=", "GREATER", ">");
     }
     else if (ch === "!") {
-      i += checkTwoCharOperator(i, ch, "=", "BANG_EQUAL", "!=", "GREATER", "!");
+      i += TwoCharOperator(i, ch, "=", "BANG_EQUAL", "!=", "BANG", "!");
     }
     else if (ch === "/") {
-      if (fileContent[i+1] = "/"){
-        
-      }
-      else{
-        console.log("SLASH / null")
+      if (fileContent[i + 1] === "/") {
+        i++;
+        while (i < fileContent.length && fileContent[i] !== "\n") {
+          i++;
+        }
+      } else {
+        console.log("SLASH / null");
       }
     }
     else {
-        console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
-        hasError = true
+      console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
+      hasError = true;
     }
   }
-}   
+}
 
 console.log("EOF  null");
 
