@@ -86,6 +86,14 @@ if (fileContent.length !== 0) {
     }
     else if (ch === " " || ch === "\t") {
     }
+    else if (fileContent(i) === '"'){
+      stringContents = "";
+      while (i < fileContent.length && fileContent[i] !== '"'){
+        i++;
+        stringContents += i
+      }
+      console.log(`STRING "${stringContents}" ${stringContents}`)
+    }
     else {
       console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
       hasError = true;
