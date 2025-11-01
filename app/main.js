@@ -93,10 +93,13 @@ if (fileContent.length !== 0) {
         stringContents += fileContent[i]
         i++;
       }
-      if (i < fileContent.length) {
-        i++;
+      if (i >= fileContent.length) {
+        console.error(`[line ${line}] Error: Unterminated string.`);
+        hasError = true;
+      } else {
+        i++
+        console.log(`STRING "${stringContents}" ${stringContents}`)
       }
-      console.log(`STRING "${stringContents}" ${stringContents}`)
     }
     else {
       console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
