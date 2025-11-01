@@ -88,12 +88,13 @@ if (fileContent.length !== 0) {
     }
     else if (ch === '"'){
       let stringContents = "";
+      i++;
       while (i < fileContent.length && fileContent[i] !== '"'){
         stringContents += fileContent[i]
         i++;
-        if (i < fileContent.length) {
-          i++;
-        }
+      }
+      if (i < fileContent.length) {
+        i++;
       }
       console.log(`STRING "${stringContents}" ${stringContents}`)
     }
