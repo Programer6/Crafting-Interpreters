@@ -76,7 +76,7 @@ if (fileContent.length !== 0) {
       i += TwoCharOperator(i, ch, "=", "BANG_EQUAL", "!=", "BANG", "!");
     }
     else if (ch === "/") {
-      if (fileContent[i + 1] === "/") {
+      if (i + 1 < fileContent.length && fileContent[i + 1] === "/") {
         line++
         while (i < fileContent.length && fileContent[i] !== "\n") {
           i++;
