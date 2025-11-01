@@ -84,6 +84,8 @@ if (fileContent.length !== 0) {
         console.log("SLASH / null");
       }
     }
+    else if (ch === " " || ch === "\t") {
+    }
     else {
       console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
       hasError = true;
