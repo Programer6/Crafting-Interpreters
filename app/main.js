@@ -39,7 +39,7 @@ const singal_dictionary = {
 if (fileContent.length !== 0) {
   for (let i = 0; i < fileContent.length; i++) {
     const ch = fileContent[i];
-    if (ch in dictionarhay) {
+    if (ch in dictionaray) {
       console.log(`${singal_dictionary[ch]} ${ch} null`);
     } else {
       console.error(`Error: Unexpected character: ${ch}`);
