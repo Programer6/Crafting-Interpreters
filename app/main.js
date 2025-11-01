@@ -77,8 +77,10 @@ if (fileContent.length !== 0) {
     }
     else if (ch === "/") {
       if (fileContent[i + 1] === "/") {
+        line++
         while (i < fileContent.length && fileContent[i] !== "\n") {
           i++;
+          
         }
       } else {
         console.log("SLASH / null");
