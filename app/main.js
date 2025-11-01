@@ -70,6 +70,15 @@ if (fileContent.length !== 0) {
       else {
         console.log("BANG ! null")
       }
+    }    
+    else if (ch === "<") {
+      if(fileContent[i+1] === "=" ) {
+        i++;
+        console.log("LESS_EQUAL <= null")
+      }
+      else {
+        console.log("LESS < null")
+      }
     }
     else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
