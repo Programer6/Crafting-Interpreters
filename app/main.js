@@ -35,15 +35,24 @@ const singal_dictionary = {
   ";": "SEMICOLON"
 };
 
+const newLine =["\n", "\r"]
+let line = 1
 
 if (fileContent.length !== 0) {
   for (let i = 0; i < fileContent.length; i++) {
     const ch = fileContent[i];
     if (ch in singal_dictionary) {
       console.log(`${singal_dictionary[ch]} ${ch} null`);
-    } else {
-      console.error(`Error: Unexpected character: ${ch}`);
-      process.exit(65)
+    } 
+    else if  (newLine.includes(ch)) {
+      line++ 
+      if (ch === '\r' && fileContent[i + 1] === '\n') {
+        i++; // Skip the \n
+      }
+    }
+    else {
+        console.error(`Error: Unexpected character: ${ch}`);
+        process.exit(65)
     }
   }
-}
+}   
