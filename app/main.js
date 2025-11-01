@@ -86,7 +86,7 @@ if (fileContent.length !== 0) {
     }
     else if (ch === " " || ch === "\t") {
     }
-    else if (fileContent(i) === '"'){
+    else if (ch === '"'){
       stringContents = "";
       while (i < fileContent.length && fileContent[i] !== '"'){
         i++;
