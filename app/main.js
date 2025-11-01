@@ -40,6 +40,19 @@ const newLine =["\n", "\r"]
 let line = 1
 let hasError = false;
 
+
+
+function TwoCharOperator(i, ch, nextChar, doubleToken, doubleOp, singleToken, singleOp) {
+  if (fileContent[i + 1] === nextChar) {
+    console.log(`${doubleToken} ${doubleOp} null`);
+    return 1; // Return 1 to increment i by 1 (skip next char)
+  } else {
+    console.log(`${singleToken} ${singleOp} null`);
+    return 0; // Return 0 to not skip
+  }
+}
+
+
 if (fileContent.length !== 0) {
   for (let i = 0; i < fileContent.length; i++) {
     const ch = fileContent[i];
@@ -53,40 +66,23 @@ if (fileContent.length !== 0) {
       }
     }
     else if (ch === "=") {
-      if (fileContent[i+1] === "="){ // need to remember to use fileContent 
-      console.log("EQUAL_EQUAL == null");
-      i++;
-      }
-    
-      else {
-         console.log("EQUAL = null")
-      }
-    }
-    else if (ch === "!") {
-      if(fileContent[i+1] === "=" ) {
-        i++;
-        console.log("BANG_EQUAL != null")
-      }
-      else {
-        console.log("BANG ! null")
-      }
+      i += TwoCharOperator(i, ch, "=", "EQUAL_EQUAL", "==", "EQUAL", "=")
     }    
     else if (ch === "<") {
-      if(fileContent[i+1] === "=" ) {
-        i++;
-        console.log("LESS_EQUAL <= null")
-      }
-      else {
-        console.log("LESS < null")
-      }
+        i += TwoCharOperator(i, ch, "=", "LESS_EQUAL", "!=", "BANG", "!")
     }
     else if (ch === ">") {
-      if(fileContent[i+1] === "=" ) {
-        i++;
-        console.log("GREATER_EQUAL >= null")
+      i += checkTwoCharOperator(i, ch, "=", "GREATER_EQUAL", ">=", "GREATER", ">");
+    }
+    else if (ch === "!") {
+      i += checkTwoCharOperator(i, ch, "=", "BANG_EQUAL", "!=", "GREATER", "!");
+    }
+    else if (ch === "/") {
+      if (fileContent[i+1] = "/"){
+        
       }
-      else {
-        console.log("GREATER > null")
+      else{
+        console.log("SLASH / null")
       }
     }
     else {
