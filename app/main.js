@@ -47,11 +47,11 @@ if (fileContent.length !== 0) {
     else if  (newLine.includes(ch)) {
       line++ 
       if (ch === '\r' && fileContent[i + 1] === '\n') {
-        i++; // Skip the \n
+        i++; 
       }
     }
     else {
-        console.error(`Error: Unexpected character: ${ch}`);
+        console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
         process.exit(65)
     }
   }
