@@ -114,7 +114,11 @@ if (fileContent.length !== 0) {
       else if (isValidString) {
         console.log(`STRING "${stringContents}" ${stringContents}`);
       }
-    }    
+    }
+      else {
+        console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
+        hasError = true;
+      } 
   }
 }
 
