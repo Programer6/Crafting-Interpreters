@@ -1,4 +1,5 @@
 import fs from "fs";
+import { exitCode } from "process";
 
 const args = process.argv.slice(2); // Skip the first two arguments (node path and script path)
 
@@ -37,6 +38,7 @@ const singal_dictionary = {
 
 const newLine =["\n", "\r"]
 let line = 1
+let hasError = false;
 
 if (fileContent.length !== 0) {
   for (let i = 0; i < fileContent.length; i++) {
@@ -52,7 +54,7 @@ if (fileContent.length !== 0) {
     }
     else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
-        haserror = true
+        hasError = true
     }
   }
 }   
