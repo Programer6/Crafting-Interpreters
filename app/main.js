@@ -88,18 +88,19 @@ if (fileContent.length !== 0) {
     }
     else if (ch === '"') {
       let stringContents = "";
-      let isValidString = true;  
-      i++; 
+      let isValidString = true;
+      i++;
+
       while (i < fileContent.length && fileContent[i] !== '"') {
         if (fileContent[i] === '\n' || fileContent[i] === '\r') {
           console.error(`[line ${line}] Error: Unterminated string.`);
           hasError = true;
-          isValidString = false;  
-          line++; 
+          isValidString = false;
+          line++;
           if (fileContent[i] === '\r' && fileContent[i + 1] === '\n') {
             i++;
           }
-          break;
+          break; 
         }
         stringContents += fileContent[i];
         i++;
@@ -108,9 +109,9 @@ if (fileContent.length !== 0) {
       if (i >= fileContent.length) {
         console.error(`[line ${line}] Error: Unterminated string.`);
         hasError = true;
-        isValidString = false; 
-      } else if (fileContent[i] === '"' && isValidString) {  
-        i++;
+        isValidString = false;
+      } 
+      else if (isValidString) {
         console.log(`STRING "${stringContents}" ${stringContents}`);
       }
     }    
