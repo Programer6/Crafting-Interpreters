@@ -77,7 +77,6 @@ if (fileContent.length !== 0) {
     }
     else if (ch === "/") {
       if (i + 1 < fileContent.length && fileContent[i + 1] === "/") {
-        line++
         while (i < fileContent.length && fileContent[i] !== "\n") {
           i++;
           
