@@ -15,7 +15,7 @@ if (command !== "tokenize") {
   process.exit(1);
 }
 
-// You can use print statements as follows for debugging, they"ll be visible when running tests.
+
 console.error("Logs from your program will appear here!");
 
 const filename = args[1];
@@ -77,7 +77,6 @@ if (fileContent.length !== 0) {
     }
     else if (ch === "/") {
       if (fileContent[i + 1] === "/") {
-        i++;
         while (i < fileContent.length && fileContent[i] !== "\n") {
           i++;
         }
