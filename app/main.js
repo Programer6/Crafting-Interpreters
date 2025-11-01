@@ -32,7 +32,6 @@ const singal_dictionary = {
   "-": "MINUS",
   "+": "PLUS",
   "*": "STAR",
-  "/": "SLASH",
   ";": "SEMICOLON"
 };
 
