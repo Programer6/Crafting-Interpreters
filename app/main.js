@@ -80,6 +80,15 @@ if (fileContent.length !== 0) {
         console.log("LESS < null")
       }
     }
+    else if (ch === ">") {
+      if(fileContent[i+1] === "=" ) {
+        i++;
+        console.log("GREATER_EQUAL >= null")
+      }
+      else {
+        console.log("GREATER > null")
+      }
+    }
     else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
         hasError = true
