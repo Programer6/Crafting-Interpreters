@@ -43,7 +43,6 @@ if (fileContent.length !== 0) {
       console.log(`${singal_dictionary[ch]} ${ch} null`);
     } else {
       console.error(`Error: Unexpected character: ${ch}`);
-      process.exit(65);
     }
   }
 }
