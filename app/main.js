@@ -86,25 +86,32 @@ if (fileContent.length !== 0) {
     }
     else if (ch === " " || ch === "\t") {
     }
-    else if (ch === '"'){
+    else if (ch === '"') {
       let stringContents = "";
-      i++;
-      while (i < fileContent.length && fileContent[i] !== '"'){
-        stringContents += fileContent[i]
+      i++; 
+      while (i < fileContent.length && fileContent[i] !== '"') {
+        if (fileContent[i] === '\n' || fileContent[i] === '\r') {
+          console.error(`[line ${line}] Error: Unterminated string.`);
+          hasError = true;
+          line++; 
+          if (fileContent[i] === '\r' && fileContent[i + 1] === '\n') {
+            i++;
+          }
+          break;
+        }
+        stringContents += fileContent[i];
         i++;
       }
+      
       if (i >= fileContent.length) {
         console.error(`[line ${line}] Error: Unterminated string.`);
         hasError = true;
-      } else {
-        i++
-        console.log(`STRING "${stringContents}" ${stringContents}`)
+      } else if (fileContent[i] === '"') {
+        i++;
+        console.log(`STRING "${stringContents}" ${stringContents}`);
       }
     }
-    else {
-      console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
-      hasError = true;
-    }
+    
   }
 }
 
