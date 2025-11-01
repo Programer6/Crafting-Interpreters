@@ -52,7 +52,13 @@ if (fileContent.length !== 0) {
     }
     else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
-        process.exit(65)
+        haserror = true
     }
   }
 }   
+
+console.log("EOF  null");
+
+if (hasError) {
+  process.exit(65);
+}
