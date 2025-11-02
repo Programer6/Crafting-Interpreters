@@ -157,8 +157,8 @@ if (fileContent.length !== 0) {
       }
       const outputText = fileContent.substring(startLetter, i)
       let capOutputText = outputText.toUpperCase()
-      if (outputText in multi_dictionary) {
-        console.log(`${capOutputText} ${outputText} null`) 
+      if (multi_dictionary.includes(outputText)) {
+        console.log(`${capOutputText} ${outputText} null`);
       } else{
         console.log(`IDENTIFIER ${outputText} null`);
       }
