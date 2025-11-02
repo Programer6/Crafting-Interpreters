@@ -144,10 +144,10 @@ if (fileContent.length !== 0) {
     else if (ch.toLowerCase() >= "a" && ch.toLowerCase() <= "z" || ch === "_") {
       let startLetter = i;
       function isAlpha(c) {
-        return (c.toLowerCase >= 'a' && c.toLowerCase <= 'z') || c === '_';
+        return (c.toLowerCase() >= 'a' && c.toLowerCase() <= 'z') || c === '_';
       }      
       function isAlphaNumeric(c) {
-        return isAlpha(c) || isNumber(c) && !(" ");
+        return isAlpha(c) || isNumber(c);  
       }
       while (i < fileContent.length && isAlphaNumeric(fileContent[i])) {
         i++;
