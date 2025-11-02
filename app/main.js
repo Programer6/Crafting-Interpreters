@@ -140,6 +140,7 @@ if (fileContent.length !== 0) {
       console.log(`NUMBER ${lexeme} ${literalString}`);
       i--; 
     }
+    else if (ch.toLowerCase >= "a" && ch.toLowerCase <= "z"))
       else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
         hasError = true;
