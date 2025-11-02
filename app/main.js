@@ -136,8 +136,8 @@ if (fileContent.length !== 0) {
         if (!lexeme.includes(".")) {
           literalString += ".0"; // += & =+
       }
-      console.log(`NUMBER ${lexeme} ${literalString}`);
       }
+      console.log(`NUMBER ${lexeme} ${literalString}`);
     }
       else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
