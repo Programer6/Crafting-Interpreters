@@ -50,6 +50,10 @@ function TwoCharOperator(i, ch, nextChar, doubleToken, doubleOp, singleToken, si
   }
 }
 
+function isNumber(c) {
+  return c >= "0" && c <= "9";
+}
+
 if (fileContent.length !== 0) {
   for (let i = 0; i < fileContent.length; i++) {
     const ch = fileContent[i];
@@ -115,6 +119,26 @@ if (fileContent.length !== 0) {
         console.log(`STRING "${stringContents}" ${stringContents}`);
       }
     }
+    else if (isNumber(ch)){
+      let start = i;
+      while(isNumber(ch)){
+        i++
+      }
+      if(fileContent(i) === "." && isNumber(fileContent[i+1]) {
+        i++;
+        while(isNumber(fileContent[i])) {
+          i++;
+        }
+        const lexeme = fileContent.substring(start, i)
+        const literal = parseFloat(lexeme)
+
+        let literalString = literal.toString();
+        if (!literal.includes(.)) {
+          literalString =+ ".0";
+      }
+      console.log(`NUMBER ${literal} ${literalString}`)
+      }
+    }
       else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
         hasError = true;
@@ -127,3 +151,5 @@ console.log("EOF  null");
 if (hasError) {
   process.exit(65);
 }
+
+
