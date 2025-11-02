@@ -121,10 +121,10 @@ if (fileContent.length !== 0) {
     }
     else if (isNumber(ch)){
       let start = i;
-      while(isNumber(ch)){
+      while(i < fileContent.length && isNumber(fileContent[i])){
         i++
       }
-      if(fileContent(i) === "." && isNumber(fileContent[i+1]) {
+      if (fileContent[i] === "." && isNumber(fileContent[i+1])) {
         i++;
         while(isNumber(fileContent[i])) {
           i++;
@@ -133,10 +133,10 @@ if (fileContent.length !== 0) {
         const literal = parseFloat(lexeme)
 
         let literalString = literal.toString();
-        if (!literal.includes(.)) {
-          literalString =+ ".0";
+        if (!lexeme.includes(".")) {
+          literalString += ".0"; // += & =+
       }
-      console.log(`NUMBER ${literal} ${literalString}`)
+      console.log(`NUMBER ${literal} ${literalString}`);
       }
     }
       else {
