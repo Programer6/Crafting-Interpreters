@@ -142,7 +142,7 @@ if (fileContent.length !== 0) {
       i--; 
     }
     else if (ch.toLowerCase() >= "a" && ch.toLowerCase() <= "z" || ch === "_") {
-      let startLetter == i;
+      let startLetter = i;
       while (i < fileContent.length && isNumber(fileContent[i]) ) {
         i++
       }
