@@ -121,6 +121,8 @@ if (fileContent.length !== 0) {
     }
     else if (isNumber(ch)){
       let start = i;
+      const lexeme = fileContent.substring(start, i)
+      const literal = parseFloat(lexeme)
       while(i < fileContent.length && isNumber(fileContent[i])){
         i++
       }
@@ -129,15 +131,13 @@ if (fileContent.length !== 0) {
         while(isNumber(fileContent[i])) {
           i++;
         }
-        const lexeme = fileContent.substring(start, i)
-        const literal = parseFloat(lexeme)
 
         let literalString = literal.toString();
         if (!lexeme.includes(".")) {
           literalString += ".0"; // += & =+
       }
       }
-      console.log(`NUMBER ${literal} ${literalString}`);
+      console.log(`NUMBER ${lexeme} ${literalString}`);
     }
       else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
