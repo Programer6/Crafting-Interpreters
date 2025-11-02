@@ -134,7 +134,7 @@ if (fileContent.length !== 0) {
       const lexeme = fileContent.substring(start, i);
       const literal = parseFloat(lexeme);
       let literalString = literal.toString();
-      if (!lexeme.includes(".")) {
+      if (!literalString.includes(".")) {
           literalString += ".0";
       }
       console.log(`NUMBER ${lexeme} ${literalString}`);
