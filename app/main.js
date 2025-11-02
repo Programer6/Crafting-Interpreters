@@ -121,23 +121,24 @@ if (fileContent.length !== 0) {
     }
     else if (isNumber(ch)){
       let start = i;
-      const lexeme = fileContent.substring(start, i)
-      const literal = parseFloat(lexeme)
       while(i < fileContent.length && isNumber(fileContent[i])){
-        i++
+        i++;
       }
       if (fileContent[i] === "." && isNumber(fileContent[i+1])) {
-        i++;
+        i++; 
         while(isNumber(fileContent[i])) {
           i++;
         }
-
-        let literalString = literal.toString();
-        if (!lexeme.includes(".")) {
-          literalString += ".0"; // += & =+
       }
+
+      const lexeme = fileContent.substring(start, i);
+      const literal = parseFloat(lexeme);
+      let literalString = literal.toString();
+      if (!lexeme.includes(".")) {
+          literalString += ".0";
       }
       console.log(`NUMBER ${lexeme} ${literalString}`);
+      i--; 
     }
       else {
         console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
