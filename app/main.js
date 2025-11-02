@@ -147,7 +147,7 @@ if (fileContent.length !== 0) {
         return (c.toLowerCase >= 'a' && c.toLowerCase <= 'z') || c === '_';
       }      
       function isAlphaNumeric(c) {
-        return isAlpha(c) || isNumber(c);
+        return isAlpha(c) || isNumber(c) && !(" ");
       }
       while (i < fileContent.length && isAlphaNumeric(fileContent[i])) {
         i++;
