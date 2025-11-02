@@ -137,7 +137,7 @@ if (fileContent.length !== 0) {
       if (!lexeme.includes(".")) {
           literalString += ".0";
       }
-      console.log(`NUMBER ${literal} ${literalString}`);
+      console.log(`NUMBER ${lexeme} ${literalString}`);
       i--; 
     }
       else {
