@@ -143,6 +143,7 @@ if (fileContent.length !== 0) {
     }
     else if (ch.toLowerCase() >= "a" && ch.toLowerCase() <= "z" || ch === "_") {
       let startLetter = i;
+
       function isAlpha(c) {
         return (c.toLowerCase() >= 'a' && c.toLowerCase() <= 'z') || c === '_';
       }      
@@ -152,8 +153,9 @@ if (fileContent.length !== 0) {
       while (i < fileContent.length && isAlphaNumeric(fileContent[i])) {
         i++;
       }
-      const outputText = fileContent.substring(start, i);
+      const outputText = fileContent.substring(startLetter, i);
       console.log(`IDENTIFIER ${outputText} null`);
+      let startLetter = i+1;
     }
     else {
       console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
