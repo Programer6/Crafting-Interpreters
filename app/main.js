@@ -155,7 +155,7 @@ if (fileContent.length !== 0) {
       }
       const outputText = fileContent.substring(startLetter, i);
       console.log(`IDENTIFIER ${outputText} null`);
-      let startLetter = i+1;
+      i--;
     }
     else {
       console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
