@@ -36,6 +36,8 @@ const singal_dictionary = {
   ";": "SEMICOLON"
 };
 
+const multi_dictionary = ["and", "class", "else", "false", "for", "fun", "if", "nil", "or", "print", "return", "super", "this", "true", "var", "while"]
+
 const newLine =["\n", "\r"]
 let line = 1
 let hasError = false;
@@ -153,8 +155,13 @@ if (fileContent.length !== 0) {
       while (i < fileContent.length && isAlphaNumeric(fileContent[i])) {
         i++;
       }
-      const outputText = fileContent.substring(startLetter, i);
-      console.log(`IDENTIFIER ${outputText} null`);
+      const outputText = fileContent.substring(startLetter, i)
+      let capOutputText = outputText.toUpperCase()
+      if (outputText in multi_dictionary) {
+        console.log(`${capOutputText} ${outputText} null`) 
+      } else{
+        console.log(`IDENTIFIER ${outputText} null`);
+      }
       i--;
     }
     else {
