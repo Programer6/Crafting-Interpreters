@@ -1,5 +1,6 @@
 import fs from "fs";
 import { exitCode } from "process";
+import { start } from "repl";
 
 const args = process.argv.slice(2); // Skip the first two arguments (node path and script path)
 
@@ -140,10 +141,17 @@ if (fileContent.length !== 0) {
       console.log(`NUMBER ${lexeme} ${literalString}`);
       i--; 
     }
-    else if (ch.toLowerCase >= "a" && ch.toLowerCase <= "z"))
-      else {
-        console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
-        hasError = true;
+    else if (ch.toLowerCase() >= "a" && ch.toLowerCase() <= "z" || ch === "_") {
+      startLetter = i
+      while (i < fileContent.length && isNumber(fileContent[i]) ) {
+        i++
+      }
+      const outputText = fileContent.substring(start, i);
+      console.log(`IDENTIFIER ${outputText} null`);
+    }
+    else {
+      console.error(`[line ${line}] Error: Unexpected character: ${ch}`);
+      hasError = true;
       } 
   }
 }
